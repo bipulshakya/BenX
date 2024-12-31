@@ -264,3 +264,63 @@ footer {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);  /* Golden glow effect */
     transition: box-shadow 0.3s ease-in-out;
 }
+
+/* Responsive Design for Tablets */
+@media (max-width: 768px) {
+    .envelope {
+        width: 500px;
+        height: 400px;
+    }
+    .flap {
+        height: 120px;
+    }
+    .letter h1 {
+        font-size: 36px;
+    }
+    .letter p {
+        font-size: 20px;
+    }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+    .envelope {
+        width: 350px;
+        height: 300px;
+    }
+    .flap {
+        height: 100px;
+    }
+    .letter {
+        padding: 30px;
+    }
+    .letter h1 {
+        font-size: 28px;
+    }
+    .letter p {
+        font-size: 18px;
+    }
+    footer {
+        font-size: 16px;
+    }
+    .envelope::before {
+        font-size: 48px;
+    }
+}
+
+/* Small Phones (Smaller than 400px) */
+@media (max-width: 400px) {
+    .envelope {
+        width: 300px;
+        height: 250px;
+    }
+    .flap {
+        height: 80px;
+    }
+    .letter h1 {
+        font-size: 24px;
+    }
+    .letter p {
+        font-size: 16px;
+    }
+}
