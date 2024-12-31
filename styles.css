@@ -259,3 +259,8 @@ footer {
       font-size: 100px;
   }
 }
+
+.envelope.glow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);  /* Golden glow effect */
+    transition: box-shadow 0.3s ease-in-out;
+}
