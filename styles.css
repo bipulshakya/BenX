@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #fbc2eb, #a6c1ee);  /* Soft gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope {
+    position: relative;
+    width: 700px;
+    height: 600px;
+    background-color: #f0d5a3;
+    border-radius: 20px;  /* Rounded corners for modern look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #d4b78f;
+    border-bottom: 5px solid #c89a6f;
+    transition: height 0.6s ease-in-out;
+}
+
+.envelope::before {
+    content: "💌 💖 💕";
+    font-size: 72px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #d83a3a;
+    transition: opacity 0.6s ease;
+}
+
+.envelope.open::before {
+    opacity: 0;
+}
+
+.letter {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    height: 100%;
+    padding: 40px 50px;
+    background: linear-gradient(135deg, #fff7f0, #dff0ea);  /* Soft gradient for the letter */
+    margin-top: 100%;
+    border-radius: 15px;
+    transition: margin-top 0.6s ease-in-out;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.letter h1 {
+    color: #d83a3a;
+    font-family: 'Georgia', serif;
+    font-size: 48px;  /* Bigger heading for more emphasis */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.letter p {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Times New Roman', serif;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative elements inside the letter */
+.letter::after {
+    content: "🎉 🎊";
+    font-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .envelope {
+        width: 400px;
+        height: 400px;
+    }
+    .envelope::before {
+        font-size: 48px;
+    }
+    .letter h1 {
+        font-size: 30px;
+    }
+    .letter p {
+        font-size: 18px;
+    }
+}
+
+.firework {
+    position: absolute;
+    opacity: 0;
+    animation: show_fireworks 2s ease-in-out 5s forwards;
+    transform-origin: 50% 50%;
+    transition: transform 1s ease-in-out;
+}
+
+.firework:hover {
+    transform: scale(1.2);
+}
+
+@keyframes show_fireworks {
+    0% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.cracker {
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    transform-origin: 50% 100%;
+    overflow: hidden;
+}
+
+.cracker::before {
+    content: '';
+    background-color: gold;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    animation: fire 2s ease-in-out infinite;
+}
+
+@keyframes fire {
+    0% {
+        top: 100%;
+    }
+    25% {
+        top: 50%;
+    }
+    50% {
+        top: -25%;
+    }
+    75% {
+        top: -50%;
+    }
+    100% {
+        top: -50%;
+    }
+}
+
+.cracker:nth-child(1) {
+    transform: rotate(0deg) translateY(-15px);
+}
+.cracker:nth-child(2) {
+    transform: rotate(30deg) translateY(-15px);
+}
+.cracker:nth-child(3) {
+    transform: rotate(60deg) translateY(-15px);
+}
+.cracker:nth-child(4) {
+    transform: rotate(90deg) translateY(-15px);
+}
+.cracker:nth-child(5) {
+    transform: rotate(120deg) translateY(-15px);
+}
+.cracker:nth-child(6) {
+    transform: rotate(150deg) translateY(-15px);
+}
+.cracker:nth-child(7) {
+    transform: rotate(180deg) translateY(-15px);
+}
+.cracker:nth-child(8) {
+    transform: rotate(210deg) translateY(-15px);
+}
+.cracker:nth-child(9) {
+    transform: rotate(240deg) translateY(-15px);
+}
+.cracker:nth-child(10) {
+    transform: rotate(270deg) translateY(-15px);
+}
+.cracker:nth-child(11) {
+    transform: rotate(300deg) translateY(-15px);
+}
+.cracker:nth-child(12) {
+    transform: rotate(330deg) translateY(-15px);
+}
+
+#firework1 {
+    left: 25%;
+    top: 50%;
+    transform: scale(1);
+}
+
+#firework2 {
+    left: 50%;
+    top: 75%;
+    transform: scale(0.5);
+}
+
+#firework3 {
+    left: 80%;
+    top: 15%;
+    transform: scale(1.5);
+}
+
+@media (max-width: 600px) {
+  .msg {
+      font-size: 50px;
+  }
+  .year > span {
+      font-size: 100px;
+  }
+}
